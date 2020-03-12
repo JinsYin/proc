@@ -1,0 +1,1611 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>scsip · 《procfs》</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Jins Yin">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../sys/" />
+    
+    
+    <link rel="prev" href="device_info.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://githome.io/knowledge-base/" target="_blank" class="custom-link">知识库</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://weplay.me" target="_blank" class="custom-link">微架构师</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://quickstarts.io" target="_blank" class="custom-link">快速入门</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    简介p
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">/proc/</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../buddyinfo.html">
+            
+                <a href="../buddyinfo.html">
+            
+                    
+                    buddyinfop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../cgroups.html">
+            
+                <a href="../cgroups.html">
+            
+                    
+                    cgroupsp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../cmdline.html">
+            
+                <a href="../cmdline.html">
+            
+                    
+                    cmdlinep
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../consoles.html">
+            
+                <a href="../consoles.html">
+            
+                    
+                    consolesp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../cpuinfo.html">
+            
+                <a href="../cpuinfo.html">
+            
+                    
+                    cpuinfop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../crypto.html">
+            
+                <a href="../crypto.html">
+            
+                    
+                    cryptop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../devices.html">
+            
+                <a href="../devices.html">
+            
+                    
+                    devicesp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../diskstats.html">
+            
+                <a href="../diskstats.html">
+            
+                    
+                    diskstatsp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../dma.html">
+            
+                <a href="../dma.html">
+            
+                    
+                    dmap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../execdomains.html">
+            
+                <a href="../execdomains.html">
+            
+                    
+                    execdomainsp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../fb.html">
+            
+                <a href="../fb.html">
+            
+                    
+                    fbp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="../filesystems.html">
+            
+                <a href="../filesystems.html">
+            
+                    
+                    filesystemsp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="../interrupts.html">
+            
+                <a href="../interrupts.html">
+            
+                    
+                    interruptsp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="../iomem.html">
+            
+                <a href="../iomem.html">
+            
+                    
+                    iomemp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="../ioports.html">
+            
+                <a href="../ioports.html">
+            
+                    
+                    ioportsp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="../kallsyms.html">
+            
+                <a href="../kallsyms.html">
+            
+                    
+                    kallsymsp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="../kcore.html">
+            
+                <a href="../kcore.html">
+            
+                    
+                    kcorep
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="../key-users.html">
+            
+                <a href="../key-users.html">
+            
+                    
+                    key-usersp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="../keys.html">
+            
+                <a href="../keys.html">
+            
+                    
+                    keysp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="../kmsg.html">
+            
+                <a href="../kmsg.html">
+            
+                    
+                    kmsgp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="../kpagecgroup.html">
+            
+                <a href="../kpagecgroup.html">
+            
+                    
+                    kpagecgroupp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.22" data-path="../kpagecount.html">
+            
+                <a href="../kpagecount.html">
+            
+                    
+                    kpagecountp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.23" data-path="../kpageflags.html">
+            
+                <a href="../kpageflags.html">
+            
+                    
+                    kpageflagsp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.24" data-path="../loadavg.html">
+            
+                <a href="../loadavg.html">
+            
+                    
+                    loadavgp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.25" data-path="../locks.html">
+            
+                <a href="../locks.html">
+            
+                    
+                    locksp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.26" data-path="../mdstat.html">
+            
+                <a href="../mdstat.html">
+            
+                    
+                    mdstatp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.27" data-path="../meminfo.html">
+            
+                <a href="../meminfo.html">
+            
+                    
+                    meminfop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.28" data-path="../misc.html">
+            
+                <a href="../misc.html">
+            
+                    
+                    miscp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.29" data-path="../modules.html">
+            
+                <a href="../modules.html">
+            
+                    
+                    modulesp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.30" data-path="../mounts.html">
+            
+                <a href="../mounts.html">
+            
+                    
+                    mountsp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.31" data-path="../mtrr.html">
+            
+                <a href="../mtrr.html">
+            
+                    
+                    mtrrp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.32" data-path="../pagetypeinfo.html">
+            
+                <a href="../pagetypeinfo.html">
+            
+                    
+                    pagetypeinfop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.33" data-path="../partitions.html">
+            
+                <a href="../partitions.html">
+            
+                    
+                    partitionsp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.34" data-path="../sched_debug.html">
+            
+                <a href="../sched_debug.html">
+            
+                    
+                    schedp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.35" data-path="../schedstat.html">
+            
+                <a href="../schedstat.html">
+            
+                    
+                    schedstatp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.36" data-path="../self.html">
+            
+                <a href="../self.html">
+            
+                    
+                    selfp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.37" data-path="../slabinfo.html">
+            
+                <a href="../slabinfo.html">
+            
+                    
+                    slabinfop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.38" data-path="../softirqs.html">
+            
+                <a href="../softirqs.html">
+            
+                    
+                    softirqsp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.39" data-path="../stat.html">
+            
+                <a href="../stat.html">
+            
+                    
+                    statp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.40" data-path="../swaps.html">
+            
+                <a href="../swaps.html">
+            
+                    
+                    swapsp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.41" data-path="../sysrq-trigger.html">
+            
+                <a href="../sysrq-trigger.html">
+            
+                    
+                    sysrq-triggerp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.42" data-path="../timer_list.html">
+            
+                <a href="../timer_list.html">
+            
+                    
+                    timerp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.43" data-path="../timer_stats.html">
+            
+                <a href="../timer_stats.html">
+            
+                    
+                    timerp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.44" data-path="../uptime.html">
+            
+                <a href="../uptime.html">
+            
+                    
+                    uptimep
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.45" data-path="../version.html">
+            
+                <a href="../version.html">
+            
+                    
+                    versionp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.46" data-path="../version_signature.html">
+            
+                <a href="../version_signature.html">
+            
+                    
+                    versionp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.47" data-path="../vmallocinfo.html">
+            
+                <a href="../vmallocinfo.html">
+            
+                    
+                    vmallocinfop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.48" data-path="../vminfo.html">
+            
+                <a href="../vminfo.html">
+            
+                    
+                    vminfop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.49" data-path="../vmstat.html">
+            
+                <a href="../vmstat.html">
+            
+                    
+                    vmstatp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.50" data-path="../zoneinfo.html">
+            
+                <a href="../zoneinfo.html">
+            
+                    
+                    zoneinfop
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">/proc/[pid]</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../[pid]/">
+            
+                <a href="../[pid]/">
+            
+                    
+                    .p
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../[pid]/cgroup.html">
+            
+                <a href="../[pid]/cgroup.html">
+            
+                    
+                    cgroupp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../[pid]/cwd.html">
+            
+                <a href="../[pid]/cwd.html">
+            
+                    
+                    cwdp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../[pid]/environ.html">
+            
+                <a href="../[pid]/environ.html">
+            
+                    
+                    environp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../[pid]/fd/">
+            
+                <a href="../[pid]/fd/">
+            
+                    
+                    fdp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../[pid]/fdinfo/">
+            
+                <a href="../[pid]/fdinfo/">
+            
+                    
+                    fdinfop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../[pid]/map_files/">
+            
+                <a href="../[pid]/map_files/">
+            
+                    
+                    map_filesp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../[pid]/maps.html">
+            
+                <a href="../[pid]/maps.html">
+            
+                    
+                    mapsp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../[pid]/mem.html">
+            
+                <a href="../[pid]/mem.html">
+            
+                    
+                    memp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="../[pid]/mounts.html">
+            
+                <a href="../[pid]/mounts.html">
+            
+                    
+                    mountsp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="../[pid]/smaps.html">
+            
+                <a href="../[pid]/smaps.html">
+            
+                    
+                    smapsp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="../[pid]/stat.html">
+            
+                <a href="../[pid]/stat.html">
+            
+                    
+                    statp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="../[pid]/status.html">
+            
+                <a href="../[pid]/status.html">
+            
+                    
+                    statusp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="../[pid]/task/">
+            
+                <a href="../[pid]/task/">
+            
+                    
+                    taskp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">/proc/acpi/</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../acpi/wakeup.html">
+            
+                <a href="../acpi/wakeup.html">
+            
+                    
+                    wakeupp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">/proc/asound/</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../asound/">
+            
+                <a href="../asound/">
+            
+                    
+                    .p
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../asound/cards.html">
+            
+                <a href="../asound/cards.html">
+            
+                    
+                    cardsp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../asound/devices.html">
+            
+                <a href="../asound/devices.html">
+            
+                    
+                    devicesp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../asound/hwdep.html">
+            
+                <a href="../asound/hwdep.html">
+            
+                    
+                    hwdepp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../asound/modules.html">
+            
+                <a href="../asound/modules.html">
+            
+                    
+                    modulesp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../asound/pcm.html">
+            
+                <a href="../asound/pcm.html">
+            
+                    
+                    pcmp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../asound/timers.html">
+            
+                <a href="../asound/timers.html">
+            
+                    
+                    timersp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="../asound/version.html">
+            
+                <a href="../asound/version.html">
+            
+                    
+                    versionp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">/proc/bus/</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../bus/">
+            
+                <a href="../bus/">
+            
+                    
+                    .p
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" >
+            
+                <span>
+            
+                    
+                    input
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.2.1" data-path="../bus/input/devices.html">
+            
+                <a href="../bus/input/devices.html">
+            
+                    
+                    devicesp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.2" data-path="../bus/input/handlers.html">
+            
+                <a href="../bus/input/handlers.html">
+            
+                    
+                    handlersp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" >
+            
+                <span>
+            
+                    
+                    pci
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.3.1" data-path="../bus/pci/devices.html">
+            
+                <a href="../bus/pci/devices.html">
+            
+                    
+                    devicesp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">/proc/driver/</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../driver/rtc.html">
+            
+                <a href="../driver/rtc.html">
+            
+                    
+                    rtcp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">/proc/fs/</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../fs/">
+            
+                <a href="../fs/">
+            
+                    
+                    .p
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">/proc/scsi/</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="device_info.html">
+            
+                <a href="device_info.html">
+            
+                    
+                    devicep
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="9.2" data-path="scsi.html">
+            
+                <a href="scsi.html">
+            
+                    
+                    scsip
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">/proc/sys/</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="../sys/">
+            
+                <a href="../sys/">
+            
+                    
+                    .p
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="../sys/abi/">
+            
+                <a href="../sys/abi/">
+            
+                    
+                    abip
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="../proc/sys/kernel">
+            
+                <span>
+            
+                    
+                    kernelp
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.3.1" data-path="../sys/kernel/pid_max.html">
+            
+                <a href="../sys/kernel/pid_max.html">
+            
+                    
+                    pid_maxp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="../proc/sys/net/README.md">
+            
+                <span>
+            
+                    
+                    netp
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.4.1" >
+            
+                <span>
+            
+                    
+                    ipv4
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.4.1.1" data-path="../sys/net/ipv4/ip_forward.html">
+            
+                <a href="../sys/net/ipv4/ip_forward.html">
+            
+                    
+                    ip_forwardp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" >
+            
+                <span>
+            
+                    
+                    vm
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.5.1" data-path="../sys/vm/drop_caches.html">
+            
+                <a href="../sys/vm/drop_caches.html">
+            
+                    
+                    drop_cachesp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">/proc/sysvipc/</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="../sysvipc/msg.html">
+            
+                <a href="../sysvipc/msg.html">
+            
+                    
+                    msgp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="../sysvipc/sem.html">
+            
+                <a href="../sysvipc/sem.html">
+            
+                    
+                    semp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="../sysvipc/shm.html">
+            
+                <a href="../sysvipc/shm.html">
+            
+                    
+                    shmp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">/proc/tty/</li>
+        
+        
+    
+        <li class="chapter " data-level="12.1" data-path="../tty/drivers.html">
+            
+                <a href="../tty/drivers.html">
+            
+                    
+                    driversp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="../tty/ldiscs.html">
+            
+                <a href="../tty/ldiscs.html">
+            
+                    
+                    ldiscsp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >scsip</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="procscsiscsi">/proc/scsi/scsi</h1>
+<h2 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h2>
+<ul>
+<li><a href="http://www.t10.org/scsi-3.htm" target="_blank">SCSI Standards Architecture</a></li>
+</ul>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> Copyright &#xA9; 2019-2020 | CC BY-NC-SA 4.0 <br> &#x76F8;&#x5173;&#x7F51;&#x7AD9;: <a href="https://githome.io/knowledge-base/" target="_blank">&#x77E5;&#x8BC6;&#x5E93;</a> <a href="https://weplay.me" target="_blank">&#x5FAE;&#x67B6;&#x6784;&#x5E08;</a> <a href="https://quickstarts.io" target="_blank">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x66F4;&#x65B0;&#x4E8E; 2020-03-12 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="device_info.html" class="navigation navigation-prev " aria-label="Previous page: devicep">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../sys/" class="navigation navigation-next " aria-label="Next page: .p">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"scsip","level":"9.2","depth":1,"next":{"title":".p","level":"10.1","depth":1,"path":"proc/sys/README.md","ref":"proc/sys/README.md","articles":[]},"previous":{"title":"devicep","level":"9.1","depth":1,"path":"proc/scsi/device_info.md","ref":"proc/scsi/device_info.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-sharing","highlight","github","-lunr","-search","search-pro","-ga","-page-toc","-splitter","-lightbox","-github-buttons@2.1.0","-custom-favicon","-summary","sitemap-general","edit-link","page-footer-ex"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/jinsyin/proc"},"page-footer-ex":{"copyright":"Copyright © 2019-2020 | CC BY-NC-SA 4.0 <br/> 相关网站: [知识库](https://githome.io/knowledge-base/) [微架构师](https://weplay.me) [快速入门](https://quickstarts.io)","markdown":true,"update_format":"YYYY-MM-DD","update_label":"更新于"},"search-pro":{},"page-toc":{"selector":".markdown-section h2, .markdown-section h3, .markdown-section h4","position":"top","showByDefault":true},"sitemap-general":{"prefix":"https://githome.io/proc/"},"highlight":{},"favicon":"favicon.ico","github-buttons":{"repo":"jinsyin/proc","types":["star"],"size":"small"},"ga":{"token":"UA-12345678-1"},"edit-link":{"label":"编辑","base":"https://github.com/jinsyin/proc/blob/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Jins Yin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《procfs》","language":"zh-hans","links":{"sidebar":{"知识库":"https://githome.io/knowledge-base/","微架构师":"https://weplay.me","快速入门":"https://quickstarts.io"}},"gitbook":"*","description":"Linux procfs、Linux /proc"},"file":{"path":"proc/scsi/scsi.md","mtime":"2020-03-12T03:33:52.751Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-12T03:34:40.366Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+
