@@ -34,10 +34,10 @@
   ],
   "pluginsConfig": {
     "github": {
-      "url": "https://github.com/jinsyin/proc"
+      "url": "https://github.com/jinsyin/procfs"
     },
     "github-buttons": {
-      "repo": "jinsyin/proc",
+      "repo": "jinsyin/procfs",
       "types": [
         "star"
       ],
@@ -47,12 +47,12 @@
       "token": "UA-12345678-1"
     },
     "edit-link": {
-      "base": "https://github.com/jinsyin/proc/blob/master/",
+      "base": "https://github.com/jinsyin/procfs/blob/master/",
       "label": "编辑"
     },
     "favicon": "favicon.ico",
     "sitemap-general": {
-      "prefix": "https://githome.io/proc/"
+      "prefix": "https://githome.io/procfs/"
     },
     "page-toc": {
       "selector": ".markdown-section h2, .markdown-section h3, .markdown-section h4",

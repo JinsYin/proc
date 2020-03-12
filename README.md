@@ -2,8 +2,8 @@
 
 [![website][website-image]][website-href]
 
-[website-image]: https://img.shields.io/website-up-down-green-red/https/githome.io/proc/.svg
-[website-href]: https://githome.io/proc/
+[website-image]: https://img.shields.io/website-up-down-green-red/https/githome.io/procfs/.svg
+[website-href]: https://githome.io/procfs/
 
 Procfs 是 Linux 所特有的伪文件系统（pseudo file system）。
 
