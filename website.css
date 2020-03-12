@@ -70,3 +70,11 @@ a:hover{color: #26CB7C}
     padding-left: 0;
 }
 /* page-toc plugin END */
+
+.book-summary ul.summary li.header {
+    font-size: 1.2em;
+    font-weight: 700;
+    text-transform: inherit;
+    border-top: 1px solid rgba(0,0,0,.04);
+    margin-top: 7px;
+}

@@ -1,0 +1,1713 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>maps · 《procfs》</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Jins Yin">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mem.html" />
+    
+    
+    <link rel="prev" href="map_files/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://githome.io/knowledge-base/" target="_blank" class="custom-link">知识库</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://weplay.me" target="_blank" class="custom-link">微架构师</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://quickstarts.io" target="_blank" class="custom-link">快速入门</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">/proc/</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../buddyinfo.html">
+            
+                <a href="../buddyinfo.html">
+            
+                    
+                    buddyinfo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../cgroups.html">
+            
+                <a href="../cgroups.html">
+            
+                    
+                    cgroups
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../cmdline.html">
+            
+                <a href="../cmdline.html">
+            
+                    
+                    cmdline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../consoles.html">
+            
+                <a href="../consoles.html">
+            
+                    
+                    consoles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../cpuinfo.html">
+            
+                <a href="../cpuinfo.html">
+            
+                    
+                    cpuinfo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../crypto.html">
+            
+                <a href="../crypto.html">
+            
+                    
+                    crypto
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../devices.html">
+            
+                <a href="../devices.html">
+            
+                    
+                    devices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../diskstats.html">
+            
+                <a href="../diskstats.html">
+            
+                    
+                    diskstats
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../dma.html">
+            
+                <a href="../dma.html">
+            
+                    
+                    dma
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../execdomains.html">
+            
+                <a href="../execdomains.html">
+            
+                    
+                    execdomains
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../fb.html">
+            
+                <a href="../fb.html">
+            
+                    
+                    fb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="../filesystems.html">
+            
+                <a href="../filesystems.html">
+            
+                    
+                    filesystems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="../interrupts.html">
+            
+                <a href="../interrupts.html">
+            
+                    
+                    interrupts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="../iomem.html">
+            
+                <a href="../iomem.html">
+            
+                    
+                    iomem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="../ioports.html">
+            
+                <a href="../ioports.html">
+            
+                    
+                    ioports
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="../kallsyms.html">
+            
+                <a href="../kallsyms.html">
+            
+                    
+                    kallsyms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="../kcore.html">
+            
+                <a href="../kcore.html">
+            
+                    
+                    kcore
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="../key-users.html">
+            
+                <a href="../key-users.html">
+            
+                    
+                    key-users
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="../keys.html">
+            
+                <a href="../keys.html">
+            
+                    
+                    keys
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="../kmsg.html">
+            
+                <a href="../kmsg.html">
+            
+                    
+                    kmsg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="../kpagecgroup.html">
+            
+                <a href="../kpagecgroup.html">
+            
+                    
+                    kpagecgroup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.22" data-path="../kpagecount.html">
+            
+                <a href="../kpagecount.html">
+            
+                    
+                    kpagecount
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.23" data-path="../kpageflags.html">
+            
+                <a href="../kpageflags.html">
+            
+                    
+                    kpageflags
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.24" data-path="../loadavg.html">
+            
+                <a href="../loadavg.html">
+            
+                    
+                    loadavg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.25" data-path="../locks.html">
+            
+                <a href="../locks.html">
+            
+                    
+                    locks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.26" data-path="../mdstat.html">
+            
+                <a href="../mdstat.html">
+            
+                    
+                    mdstat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.27" data-path="../meminfo.html">
+            
+                <a href="../meminfo.html">
+            
+                    
+                    meminfo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.28" data-path="../misc.html">
+            
+                <a href="../misc.html">
+            
+                    
+                    misc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.29" data-path="../modules.html">
+            
+                <a href="../modules.html">
+            
+                    
+                    modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.30" data-path="../mounts.html">
+            
+                <a href="../mounts.html">
+            
+                    
+                    mounts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.31" data-path="../mtrr.html">
+            
+                <a href="../mtrr.html">
+            
+                    
+                    mtrr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.32" data-path="../pagetypeinfo.html">
+            
+                <a href="../pagetypeinfo.html">
+            
+                    
+                    pagetypeinfo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.33" data-path="../partitions.html">
+            
+                <a href="../partitions.html">
+            
+                    
+                    partitions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.34" data-path="../sched_debug.html">
+            
+                <a href="../sched_debug.html">
+            
+                    
+                    sched
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.35" data-path="../schedstat.html">
+            
+                <a href="../schedstat.html">
+            
+                    
+                    schedstat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.36" data-path="../self.html">
+            
+                <a href="../self.html">
+            
+                    
+                    self
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.37" data-path="../slabinfo.html">
+            
+                <a href="../slabinfo.html">
+            
+                    
+                    slabinfo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.38" data-path="../softirqs.html">
+            
+                <a href="../softirqs.html">
+            
+                    
+                    softirqs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.39" data-path="../stat.html">
+            
+                <a href="../stat.html">
+            
+                    
+                    stat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.40" data-path="../swaps.html">
+            
+                <a href="../swaps.html">
+            
+                    
+                    swaps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.41" data-path="../sysrq-trigger.html">
+            
+                <a href="../sysrq-trigger.html">
+            
+                    
+                    sysrq-trigger
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.42" data-path="../timer_list.html">
+            
+                <a href="../timer_list.html">
+            
+                    
+                    timer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.43" data-path="../timer_stats.html">
+            
+                <a href="../timer_stats.html">
+            
+                    
+                    timer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.44" data-path="../uptime.html">
+            
+                <a href="../uptime.html">
+            
+                    
+                    uptime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.45" data-path="../version.html">
+            
+                <a href="../version.html">
+            
+                    
+                    version
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.46" data-path="../version_signature.html">
+            
+                <a href="../version_signature.html">
+            
+                    
+                    version
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.47" data-path="../vmallocinfo.html">
+            
+                <a href="../vmallocinfo.html">
+            
+                    
+                    vmallocinfo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.48" data-path="../vminfo.html">
+            
+                <a href="../vminfo.html">
+            
+                    
+                    vminfo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.49" data-path="../vmstat.html">
+            
+                <a href="../vmstat.html">
+            
+                    
+                    vmstat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.50" data-path="../zoneinfo.html">
+            
+                <a href="../zoneinfo.html">
+            
+                    
+                    zoneinfo
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">/proc/[pid]</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    .
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="cgroup.html">
+            
+                <a href="cgroup.html">
+            
+                    
+                    cgroup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="cwd.html">
+            
+                <a href="cwd.html">
+            
+                    
+                    cwd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="environ.html">
+            
+                <a href="environ.html">
+            
+                    
+                    environ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="fd/">
+            
+                <a href="fd/">
+            
+                    
+                    fd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="fdinfo/">
+            
+                <a href="fdinfo/">
+            
+                    
+                    fdinfo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="map_files/">
+            
+                <a href="map_files/">
+            
+                    
+                    map_files
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.8" data-path="maps.html">
+            
+                <a href="maps.html">
+            
+                    
+                    maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="mem.html">
+            
+                <a href="mem.html">
+            
+                    
+                    mem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="mounts.html">
+            
+                <a href="mounts.html">
+            
+                    
+                    mounts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="smaps.html">
+            
+                <a href="smaps.html">
+            
+                    
+                    smaps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="stat.html">
+            
+                <a href="stat.html">
+            
+                    
+                    stat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="status.html">
+            
+                <a href="status.html">
+            
+                    
+                    status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="task/">
+            
+                <a href="task/">
+            
+                    
+                    task
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">/proc/acpi/</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../acpi/wakeup.html">
+            
+                <a href="../acpi/wakeup.html">
+            
+                    
+                    wakeup
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">/proc/asound/</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../asound/">
+            
+                <a href="../asound/">
+            
+                    
+                    .
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../asound/cards.html">
+            
+                <a href="../asound/cards.html">
+            
+                    
+                    cards
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../asound/devices.html">
+            
+                <a href="../asound/devices.html">
+            
+                    
+                    devices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../asound/hwdep.html">
+            
+                <a href="../asound/hwdep.html">
+            
+                    
+                    hwdep
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../asound/modules.html">
+            
+                <a href="../asound/modules.html">
+            
+                    
+                    modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../asound/pcm.html">
+            
+                <a href="../asound/pcm.html">
+            
+                    
+                    pcm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../asound/timers.html">
+            
+                <a href="../asound/timers.html">
+            
+                    
+                    timers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="../asound/version.html">
+            
+                <a href="../asound/version.html">
+            
+                    
+                    version
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">/proc/bus/</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../bus/">
+            
+                <a href="../bus/">
+            
+                    
+                    .
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" >
+            
+                <span>
+            
+                    
+                    input
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.2.1" data-path="../bus/input/devices.html">
+            
+                <a href="../bus/input/devices.html">
+            
+                    
+                    devices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.2" data-path="../bus/input/handlers.html">
+            
+                <a href="../bus/input/handlers.html">
+            
+                    
+                    handlers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" >
+            
+                <span>
+            
+                    
+                    pci
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.3.1" data-path="../bus/pci/devices.html">
+            
+                <a href="../bus/pci/devices.html">
+            
+                    
+                    devices
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">/proc/driver/</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../driver/rtc.html">
+            
+                <a href="../driver/rtc.html">
+            
+                    
+                    rtc
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">/proc/fs/</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../fs/">
+            
+                <a href="../fs/">
+            
+                    
+                    .
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">/proc/scsi/</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../scsi/device_info.html">
+            
+                <a href="../scsi/device_info.html">
+            
+                    
+                    device
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../scsi/scsi.html">
+            
+                <a href="../scsi/scsi.html">
+            
+                    
+                    scsi
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">/proc/sys/</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="../sys/">
+            
+                <a href="../sys/">
+            
+                    
+                    .
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="../sys/abi/">
+            
+                <a href="../sys/abi/">
+            
+                    
+                    abi
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="../proc/sys/kernel">
+            
+                <span>
+            
+                    
+                    kernel
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.3.1" data-path="../sys/kernel/pid_max.html">
+            
+                <a href="../sys/kernel/pid_max.html">
+            
+                    
+                    pid_max
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="../proc/sys/net/README.md">
+            
+                <span>
+            
+                    
+                    net
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.4.1" >
+            
+                <span>
+            
+                    
+                    ipv4
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.4.1.1" data-path="../sys/net/ipv4/ip_forward.html">
+            
+                <a href="../sys/net/ipv4/ip_forward.html">
+            
+                    
+                    ip_forward
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" >
+            
+                <span>
+            
+                    
+                    vm
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.5.1" data-path="../sys/vm/drop_caches.html">
+            
+                <a href="../sys/vm/drop_caches.html">
+            
+                    
+                    drop_caches
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">/proc/sysvipc/</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="../sysvipc/msg.html">
+            
+                <a href="../sysvipc/msg.html">
+            
+                    
+                    msg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="../sysvipc/sem.html">
+            
+                <a href="../sysvipc/sem.html">
+            
+                    
+                    sem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="../sysvipc/shm.html">
+            
+                <a href="../sysvipc/shm.html">
+            
+                    
+                    shm
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">/proc/tty/</li>
+        
+        
+    
+        <li class="chapter " data-level="12.1" data-path="../tty/drivers.html">
+            
+                <a href="../tty/drivers.html">
+            
+                    
+                    drivers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="../tty/ldiscs.html">
+            
+                <a href="../tty/ldiscs.html">
+            
+                    
+                    ldiscs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >maps</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="procpidmaps">/proc/[pid]/maps</h1>
+<h2 id="&#x5B57;&#x6BB5;">&#x5B57;&#x6BB5;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>address</td>
+<td>&#x8FDB;&#x7A0B;&#x4E2D;&#x6620;&#x5C04;&#x6240;&#x5360;&#x7528;&#x7684;&#x5730;&#x5740;&#x7A7A;&#x95F4;</td>
+</tr>
+<tr>
+<td>perms</td>
+<td>&#x6743;&#x9650;&#x96C6;&#xFF1A;<br><em> r = read <br></em> w = write <br><em> x = execute <br></em> s = shared <br>* p = private (copy on write)</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>&#x6587;&#x4EF6;&#x6216;&#x4E00;&#x5207;&#x4E8B;&#x7269;&#x7684;&#x504F;&#x79FB;&#x91CF;</td>
+</tr>
+<tr>
+<td>dev</td>
+<td>&#x8BBE;&#x5907;&#x53F7;&#xFF0C;&#x683C;&#x5F0F;&#xFF1A;<code>&#x4E3B;&#x8BBE;&#x5907;&#x53F7;:&#x526F;&#x8BBE;&#x5907;&#x53F7;</code>&#x3002;&#x82E5; <strong>pathname</strong> &#x662F;&#x4F2A;&#x8DEF;&#x5F84;&#xFF0C;&#x5219;&#x4E3A; <code>00:00</code></td>
+</tr>
+<tr>
+<td>inode</td>
+<td>&#x5BF9;&#x5E94;&#x8BBE;&#x5907;&#x6587;&#x4EF6;&#x7684; inode &#x3002;&#x5176;&#x4E2D;&#xFF0C;0 &#x8868;&#x793A;&#x6CA1;&#x6709; inode &#x4E0E;&#x5185;&#x5B58;&#x533A;&#x57DF;&#x76F8;&#x5173;&#x8054;&#xFF0C;&#x5C31;&#x50CF; BSS&#xFF08;&#x672A;&#x521D;&#x59CB;&#x5316;&#x6570;&#x636E;&#x6BB5;&#xFF09;&#x90A3;&#x6837;&#x3002;&#x82E5; <strong>pathname</strong> &#x662F;&#x4F2A;&#x8DEF;&#x5F84;&#xFF0C;&#x5219;&#x4E3A; <code>0</code></td>
+</tr>
+<tr>
+<td>pathname</td>
+<td>&#x901A;&#x5E38;&#x662F;&#x53EF;&#x6620;&#x5C04;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x5BF9;&#x4E8E; ELF &#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x67E5;&#x770B; ELF &#x7A0B;&#x5E8F;&#x5934;&#xFF08;<code>readelf-l</code>&#xFF09;&#x4E2D;&#x7684;&#x504F;&#x79FB;&#x5B57;&#x6BB5;&#x8F7B;&#x677E;&#x5730;&#x4E0E;&#x504F;&#x79FB;&#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x534F;&#x8C03;&#x3002;&#x82E5;&#x8BE5;&#x5B57;&#x6BB5;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x901A;&#x8FC7; <code>mmap()</code> &#x6620;&#x5C04;&#x521B;&#x5EFA;&#x7684;&#x533F;&#x540D;&#x6620;&#x5C04;&#x3002;&#x989D;&#x5916;&#x4F2A;&#x8DEF;&#x5F84;&#xFF1A;<br><em> <code>[stack]</code>&#xFF1A;&#x521D;&#x59CB;&#x5316;&#x8FDB;&#x7A0B;&#xFF08;&#x4EA6;&#x79F0;&#x4E3B;&#x7EBF;&#x7A0B;&#xFF09;&#x7684;&#x6808; <br></em> <code>[stack:&lt;tid&gt;]</code>&#xFF1A;&#x7EBF;&#x7A0B;&#x7684;&#x6808;&#xFF08;<code>&lt;tid&gt;</code> &#x5373;&#x7EBF;&#x7A0B; ID&#xFF09;&#xFF0C;&#x5BF9;&#x5E94;&#x4E8E; <code>/proc/[pid]/tasks/[tid]/</code> <br><em> <code>[vdso]</code>&#xFF1A;&#x865A;&#x62DF;&#x52A8;&#x6001;&#x94FE;&#x63A5;&#x7684;&#x5171;&#x4EAB;&#x5BF9;&#x8C61; <br></em> <code>[heap]</code>&#xFF1A;&#x8FDB;&#x7A0B;&#x7684;&#x5806;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h2>
+<pre><code class="lang-sh">address           perms offset  dev   inode       pathname
+00400000-00452000 r-xp 00000000 08:02 173521      /usr/bin/dbus-daemon
+00651000-00652000 r--p 00051000 08:02 173521      /usr/bin/dbus-daemon
+00652000-00655000 rw-p 00052000 08:02 173521      /usr/bin/dbus-daemon
+00e03000-00e24000 rw-p 00000000 00:00 0           [heap]
+00e24000-011f7000 rw-p 00000000 00:00 0           [heap]
+...
+35b1800000-35b1820000 r-xp 00000000 08:02 135522  /usr/lib64/ld-2.15.so
+35b1a1f000-35b1a20000 r--p 0001f000 08:02 135522  /usr/lib64/ld-2.15.so
+35b1a20000-35b1a21000 rw-p 00020000 08:02 135522  /usr/lib64/ld-2.15.so
+35b1a21000-35b1a22000 rw-p 00000000 00:00 0
+35b1c00000-35b1dac000 r-xp 00000000 08:02 135870  /usr/lib64/libc-2.15.so
+35b1dac000-35b1fac000 ---p 001ac000 08:02 135870  /usr/lib64/libc-2.15.so
+35b1fac000-35b1fb0000 r--p 001ac000 08:02 135870  /usr/lib64/libc-2.15.so
+35b1fb0000-35b1fb2000 rw-p 001b0000 08:02 135870  /usr/lib64/libc-2.15.so
+...
+f2c6ff8c000-7f2c7078c000 rw-p 00000000 00:00 0    [stack:986]
+...
+7fffb2c0d000-7fffb2c2e000 rw-p 00000000 00:00 0   [stack]
+7fffb2d48000-7fffb2d49000 r-xp 00000000 00:00 0   [vdso]
+</code></pre>
+<pre><code class="lang-sh">$ cat /proc/$$/maps
+-------------------
+00400000-004f0000 r-xp 00000000 08:11 3801155                            /bin/bash
+006ef000-006f0000 r--p 000ef000 08:11 3801155                            /bin/bash
+006f0000-006f9000 rw-p 000f0000 08:11 3801155                            /bin/bash
+006f9000-006ff000 rw-p 00000000 00:00 0
+00c43000-0175d000 rw-p 00000000 00:00 0                                  [heap]
+7f75c3928000-7f75c3932000 r-xp 00000000 08:11 4224737                    /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7f75c3932000-7f75c3b31000 ---p 0000a000 08:11 4224737                    /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7f75c3b31000-7f75c3b32000 r--p 00009000 08:11 4224737                    /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7f75c3b32000-7f75c3b33000 rw-p 0000a000 08:11 4224737                    /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7f75c3b33000-7f75c3b3e000 r-xp 00000000 08:11 4224725                    /lib/x86_64-linux-gnu/libnss_nis-2.19.so
+7f75c3b3e000-7f75c3d3d000 ---p 0000b000 08:11 4224725                    /lib/x86_64-linux-gnu/libnss_nis-2.19.so
+7f75c3d3d000-7f75c3d3e000 r--p 0000a000 08:11 4224725                    /lib/x86_64-linux-gnu/libnss_nis-2.19.so
+7f75c3d3e000-7f75c3d3f000 rw-p 0000b000 08:11 4224725                    /lib/x86_64-linux-gnu/libnss_nis-2.19.so
+7f75c3d3f000-7f75c3d56000 r-xp 00000000 08:11 4224741                    /lib/x86_64-linux-gnu/libnsl-2.19.so
+7f75c3d56000-7f75c3f55000 ---p 00017000 08:11 4224741                    /lib/x86_64-linux-gnu/libnsl-2.19.so
+7f75c3f55000-7f75c3f56000 r--p 00016000 08:11 4224741                    /lib/x86_64-linux-gnu/libnsl-2.19.so
+7f75c3f56000-7f75c3f57000 rw-p 00017000 08:11 4224741                    /lib/x86_64-linux-gnu/libnsl-2.19.so
+7f75c3f57000-7f75c3f59000 rw-p 00000000 00:00 0
+7f75c3f59000-7f75c3f62000 r-xp 00000000 08:11 4224740                    /lib/x86_64-linux-gnu/libnss_compat-2.19.so
+7f75c3f62000-7f75c4161000 ---p 00009000 08:11 4224740                    /lib/x86_64-linux-gnu/libnss_compat-2.19.so
+7f75c4161000-7f75c4162000 r--p 00008000 08:11 4224740                    /lib/x86_64-linux-gnu/libnss_compat-2.19.so
+7f75c4162000-7f75c4163000 rw-p 00009000 08:11 4224740                    /lib/x86_64-linux-gnu/libnss_compat-2.19.so
+7f75c4163000-7f75c4845000 r--p 00000000 08:11 1842190                    /usr/lib/locale/locale-archive
+7f75c4845000-7f75c4a03000 r-xp 00000000 08:11 4224736                    /lib/x86_64-linux-gnu/libc-2.19.so
+7f75c4a03000-7f75c4c03000 ---p 001be000 08:11 4224736                    /lib/x86_64-linux-gnu/libc-2.19.so
+7f75c4c03000-7f75c4c07000 r--p 001be000 08:11 4224736                    /lib/x86_64-linux-gnu/libc-2.19.so
+7f75c4c07000-7f75c4c09000 rw-p 001c2000 08:11 4224736                    /lib/x86_64-linux-gnu/libc-2.19.so
+7f75c4c09000-7f75c4c0e000 rw-p 00000000 00:00 0
+7f75c4c0e000-7f75c4c11000 r-xp 00000000 08:11 4224727                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7f75c4c11000-7f75c4e10000 ---p 00003000 08:11 4224727                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7f75c4e10000-7f75c4e11000 r--p 00002000 08:11 4224727                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7f75c4e11000-7f75c4e12000 rw-p 00003000 08:11 4224727                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7f75c4e12000-7f75c4e37000 r-xp 00000000 08:11 4198947                    /lib/x86_64-linux-gnu/libtinfo.so.5.9
+7f75c4e37000-7f75c5036000 ---p 00025000 08:11 4198947                    /lib/x86_64-linux-gnu/libtinfo.so.5.9
+7f75c5036000-7f75c503a000 r--p 00024000 08:11 4198947                    /lib/x86_64-linux-gnu/libtinfo.so.5.9
+7f75c503a000-7f75c503b000 rw-p 00028000 08:11 4198947                    /lib/x86_64-linux-gnu/libtinfo.so.5.9
+7f75c503b000-7f75c505e000 r-xp 00000000 08:11 4224733                    /lib/x86_64-linux-gnu/ld-2.19.so
+7f75c5239000-7f75c523d000 rw-p 00000000 00:00 0
+7f75c5256000-7f75c525d000 r-<span class="hljs-_">-s</span> 00000000 08:11 2104076                    /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+7f75c525d000-7f75c525e000 r--p 00022000 08:11 4224733                    /lib/x86_64-linux-gnu/ld-2.19.so
+7f75c525e000-7f75c525f000 rw-p 00023000 08:11 4224733                    /lib/x86_64-linux-gnu/ld-2.19.so
+7f75c525f000-7f75c5260000 rw-p 00000000 00:00 0
+7ffc14e76000-7ffc14e97000 rw-p 00000000 00:00 0                          [stack]
+7ffc14fe8000-7ffc14feb000 r--p 00000000 00:00 0                          [vvar]
+7ffc14feb000-7ffc14fed000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+</code></pre>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> Copyright &#xA9; 2019-2020 | CC BY-NC-SA 4.0 <br> &#x76F8;&#x5173;&#x7F51;&#x7AD9;: <a href="https://githome.io/knowledge-base/" target="_blank">&#x77E5;&#x8BC6;&#x5E93;</a> <a href="https://weplay.me" target="_blank">&#x5FAE;&#x67B6;&#x6784;&#x5E08;</a> <a href="https://quickstarts.io" target="_blank">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x66F4;&#x65B0;&#x4E8E; 2020-03-12 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="map_files/" class="navigation navigation-prev " aria-label="Previous page: map_files">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mem.html" class="navigation navigation-next " aria-label="Next page: mem">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"maps","level":"3.8","depth":1,"next":{"title":"mem","level":"3.9","depth":1,"path":"[pid]/mem.md","ref":"[pid]/mem.md","articles":[]},"previous":{"title":"map_files","level":"3.7","depth":1,"path":"[pid]/map_files/README.md","ref":"[pid]/map_files/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-sharing","highlight","github","-lunr","-search","search-pro","-ga","-page-toc","-splitter","-lightbox","-github-buttons@2.1.0","-custom-favicon","-summary","sitemap-general","edit-link","page-footer-ex"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/jinsyin/proc"},"page-footer-ex":{"copyright":"Copyright © 2019-2020 | CC BY-NC-SA 4.0 <br/> 相关网站: [知识库](https://githome.io/knowledge-base/) [微架构师](https://weplay.me) [快速入门](https://quickstarts.io)","markdown":true,"update_format":"YYYY-MM-DD","update_label":"更新于"},"search-pro":{},"page-toc":{"selector":".markdown-section h2, .markdown-section h3, .markdown-section h4","position":"top","showByDefault":true},"sitemap-general":{"prefix":"https://githome.io/proc/"},"highlight":{},"favicon":"favicon.ico","github-buttons":{"repo":"jinsyin/proc","types":["star"],"size":"small"},"ga":{"token":"UA-12345678-1"},"edit-link":{"label":"编辑","base":"https://github.com/jinsyin/proc/blob/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Jins Yin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《procfs》","language":"zh-hans","links":{"sidebar":{"知识库":"https://githome.io/knowledge-base/","微架构师":"https://weplay.me","快速入门":"https://quickstarts.io"}},"gitbook":"*","description":"Linux procfs、Linux /proc"},"file":{"path":"[pid]/maps.md","mtime":"2020-03-12T03:21:01.977Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-12T03:21:51.988Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>简介 · 《procfs》</title>
+        <title>buddyinfo · 《procfs》</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -49,8 +49,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="buddyinfo.html" />
+    <link rel="next" href="cgroups.html" />
     
+    
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -98,7 +100,7 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./">
+        <li class="chapter " data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -118,7 +120,7 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="buddyinfo.html">
+        <li class="chapter active" data-level="2.1" data-path="buddyinfo.html">
             
                 <a href="buddyinfo.html">
             
@@ -1515,7 +1517,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >简介</a>
+        <a href="." >buddyinfo</a>
     </h1>
 </div>
 
@@ -1530,270 +1532,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="procfs">Procfs</h1>
-<p><a href="https://githome.io/proc/" target="_blank"><img src="https://img.shields.io/website-up-down-green-red/https/githome.io/proc/.svg" alt="website"></a></p>
-<p>Procfs &#x662F; Linux &#x6240;&#x7279;&#x6709;&#x7684;&#x4F2A;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF08;pseudo file system&#xFF09;&#x3002;</p>
-<p>&#x4E3A;&#x4E86;&#x66F4;&#x4FBF;&#x6377;&#x5730;&#x83B7;&#x53D6;&#x548C;&#xFF08;&#x6216;&#xFF09;&#x4FEE;&#x6539;&#x5185;&#x6838;&#x5C5E;&#x6027;&#xFF0C;Linux &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A; proc &#x4F2A;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x8BE5;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x9A7B;&#x7559;&#x4E8E; <code>/proc</code> &#x76EE;&#x5F55;&#xFF0C;&#x5305;&#x542B;&#x4E86;&#x5404;&#x79CD;&#x7528;&#x4E8E;&#x5C55;&#x793A;&#x5185;&#x6838;&#x4FE1;&#x606F;&#x7684;&#x6587;&#x4EF6;&#x3002;</p>
-<p>&#x4E4B;&#x6240;&#x4EE5;&#x5C06; proc &#x79F0;&#x4E3A;&#x4F2A;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF08;pseudo&#xFF1A;&#x5047;&#x7684;&#xFF1B;&#x4F2A;&#x7684;&#xFF09;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x5176;&#x5305;&#x542B;&#x7684;&#x6587;&#x4EF6;&#x5E76;&#x672A;&#x5B58;&#x50A8;&#x5728;&#x78C1;&#x76D8;&#x4E0A;&#xFF0C;&#x800C;&#x662F;&#x7531;&#x5185;&#x6838;&#x5728;&#x8FDB;&#x7A0B;&#x8BBF;&#x95EE;&#x6B64;&#x7C7B;&#x4FE1;&#x606F;&#x65F6;&#x52A8;&#x6001;&#x521B;&#x5EFA;&#x800C;&#x6210;&#x3002;</p>
-<h2 id="&#x76EE;&#x5F55;&#x5C42;&#x7EA7;">&#x76EE;&#x5F55;&#x5C42;&#x7EA7;</h2>
-<table>
-<thead>
-<tr>
-<th>&#x5B50;&#x76EE;&#x5F55;</th>
-<th>&#x63CF;&#x8FF0;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>/proc/</td>
-<td>&#x7CFB;&#x7EDF;&#x76F8;&#x5173;&#x4FE1;&#x606F;</td>
-</tr>
-<tr>
-<td>/proc/[pid]/</td>
-<td>&#x8FDB;&#x7A0B;&#x76F8;&#x5173;&#x4FE1;&#x606F;</td>
-</tr>
-<tr>
-<td>/proc/net/</td>
-<td>&#x7F51;&#x7EDC;&#x548C;&#x5957;&#x63A5;&#x5B57;&#x7684;&#x72B6;&#x6001;&#x4FE1;&#x606F;</td>
-</tr>
-<tr>
-<td>/proc/sys/fs/</td>
-<td>&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x76F8;&#x5173;&#x8BBE;&#x7F6E;</td>
-</tr>
-<tr>
-<td>/proc/sys/kernel/</td>
-<td>&#x5E38;&#x89C4;&#x7684;&#x5185;&#x6838;&#x8BBE;&#x7F6E;</td>
-</tr>
-<tr>
-<td>/proc/sys/net/</td>
-<td>&#x7F51;&#x7EDC;&#x548C;&#x5957;&#x63A5;&#x5B57;&#x7684;&#x8BBE;&#x7F6E;</td>
-</tr>
-<tr>
-<td>/proc/sys/vm/</td>
-<td>&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x8BBE;&#x7F6E;</td>
-</tr>
-<tr>
-<td>/proc/sysvipc/</td>
-<td>System V IPC &#x5BF9;&#x8C61;&#x4FE1;&#x606F;</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>symlink</th>
-<th>&#x63CF;&#x8FF0;</th>
-<th>&#x793A;&#x4F8B;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>mounts</td>
-<td></td>
-<td><code>mounts -&gt; self/mounts</code></td>
-</tr>
-<tr>
-<td>self</td>
-<td></td>
-<td><code>self -&gt; 795328</code></td>
-</tr>
-<tr>
-<td>thread-self</td>
-<td></td>
-<td><code>thread-self -&gt; 795328/task/795328</code></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>&#x5B50;&#x6587;&#x4EF6;</th>
-<th>&#x63CF;&#x8FF0;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="&#x67E5;&#x770B;&#x548C;&#x4FEE;&#x6539;">&#x67E5;&#x770B;&#x548C;&#x4FEE;&#x6539;</h2>
-<pre><code class="lang-sh">$ <span class="hljs-built_in">echo</span> 1000000 &gt; /proc/sys/kernel/pid_max
-$ cat /pro/sys/kernel/pid_max
-</code></pre>
-<p>&#x6CE8;&#x610F;&#xFF1A;</p>
-<ul>
-<li><code>/proc</code> &#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x4E00;&#x4E9B;&#x6587;&#x4EF6;&#x662F;&#x53EA;&#x8BFB;&#x7684;&#xFF0C;&#x4EC5;&#x7528;&#x4E8E;&#x663E;&#x793A;&#x5185;&#x6838;&#x4FE1;&#x606F;&#xFF0C;&#x4F46;&#x65E0;&#x6CD5;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x591A;&#x89C1;&#x4E8E; <code>/proc/[pid]/</code> &#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6587;&#x4EF6;</li>
-<li><code>/proc</code> &#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x4E00;&#x4E9B;&#x6587;&#x4EF6;&#x4EC5;&#x80FD;&#x6709;&#x6587;&#x4EF6;&#x62E5;&#x6709;&#x8005;&#xFF08;&#x6216;&#x7279;&#x6743;&#x7EA7;&#x8FDB;&#x7A0B;&#xFF09;&#x8BFB;&#x53D6;</li>
-<li>&#x9664; <code>/proc/[pid]/</code> &#x5B50;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#xFF0C;<code>/proc</code> &#x76EE;&#x5F55;&#x7684;&#x5176;&#x4ED6;&#x6587;&#x4EF6;&#x5927;&#x591A;&#x5C5E;&#x4E8E; root &#x7528;&#x6237;</li>
-</ul>
-<h2 id="&#x76F8;&#x5173;">&#x76F8;&#x5173;</h2>
-<pre><code class="lang-sh"><span class="hljs-comment"># &#x624B;&#x518C;&#x9875;</span>
-$ man 5 proc
-</code></pre>
-<pre><code class="lang-sh"><span class="hljs-comment"># Debian</span>
-$ apt-get install procinfo
-
-$ lsdev
-
-$ procinfo
-</code></pre>
-<h2 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h2>
-<pre><code class="lang-sh">$ tree -L 1
-&#x251C;&#x2500;&#x2500; acpi
-&#x2502;   &#x2514;&#x2500;&#x2500; wakeup
-&#x251C;&#x2500;&#x2500; asound
-&#x2502;   &#x251C;&#x2500;&#x2500; card0
-&#x2502;   &#x251C;&#x2500;&#x2500; card1
-&#x2502;   &#x251C;&#x2500;&#x2500; cards
-&#x2502;   &#x251C;&#x2500;&#x2500; devices
-&#x2502;   &#x251C;&#x2500;&#x2500; hwdep
-&#x2502;   &#x251C;&#x2500;&#x2500; modules
-&#x2502;   &#x251C;&#x2500;&#x2500; NVidia -&gt; card1
-&#x2502;   &#x251C;&#x2500;&#x2500; oss
-&#x2502;   &#x251C;&#x2500;&#x2500; PCH -&gt; card0
-&#x2502;   &#x251C;&#x2500;&#x2500; pcm
-&#x2502;   &#x251C;&#x2500;&#x2500; seq
-&#x2502;   &#x251C;&#x2500;&#x2500; timers
-&#x2502;   &#x2514;&#x2500;&#x2500; version
-&#x251C;&#x2500;&#x2500; buddyinfo
-&#x251C;&#x2500;&#x2500; bus
-&#x2502;   &#x251C;&#x2500;&#x2500; input
-&#x2502;   &#x2514;&#x2500;&#x2500; pci
-&#x251C;&#x2500;&#x2500; cgroups
-&#x251C;&#x2500;&#x2500; cmdline
-&#x251C;&#x2500;&#x2500; consoles
-&#x251C;&#x2500;&#x2500; cpuinfo
-&#x251C;&#x2500;&#x2500; crypto
-&#x251C;&#x2500;&#x2500; devices
-&#x251C;&#x2500;&#x2500; diskstats
-&#x251C;&#x2500;&#x2500; dma
-&#x251C;&#x2500;&#x2500; driver
-&#x2502;   &#x2514;&#x2500;&#x2500; rtc
-&#x251C;&#x2500;&#x2500; execdomains
-&#x251C;&#x2500;&#x2500; fb
-&#x251C;&#x2500;&#x2500; filesystems
-&#x251C;&#x2500;&#x2500; fs
-&#x2502;   &#x251C;&#x2500;&#x2500; aufs
-&#x2502;   &#x251C;&#x2500;&#x2500; ext4
-&#x2502;   &#x251C;&#x2500;&#x2500; fscache
-&#x2502;   &#x251C;&#x2500;&#x2500; jbd2
-&#x2502;   &#x251C;&#x2500;&#x2500; lockd
-&#x2502;   &#x251C;&#x2500;&#x2500; nfs
-&#x2502;   &#x251C;&#x2500;&#x2500; nfsd
-&#x2502;   &#x251C;&#x2500;&#x2500; nfsfs
-&#x2502;   &#x2514;&#x2500;&#x2500; xfs
-&#x251C;&#x2500;&#x2500; interrupts
-&#x251C;&#x2500;&#x2500; iomem
-&#x251C;&#x2500;&#x2500; ioports
-&#x251C;&#x2500;&#x2500; irq
-&#x2502;   &#x251C;&#x2500;&#x2500; 0
-&#x2502;   &#x251C;&#x2500;&#x2500; 1
-&#x2502;   &#x251C;&#x2500;&#x2500; 10
-&#x2502;   &#x251C;&#x2500;&#x2500; 11
-&#x2502;   &#x251C;&#x2500;&#x2500; 12
-&#x2502;   &#x251C;&#x2500;&#x2500; 13
-&#x2502;   &#x251C;&#x2500;&#x2500; 14
-&#x2502;   &#x251C;&#x2500;&#x2500; 15
-&#x2502;   &#x251C;&#x2500;&#x2500; 16
-&#x2502;   &#x251C;&#x2500;&#x2500; 17
-&#x2502;   &#x251C;&#x2500;&#x2500; 2
-&#x2502;   &#x251C;&#x2500;&#x2500; 23
-&#x2502;   &#x251C;&#x2500;&#x2500; 25
-&#x2502;   &#x251C;&#x2500;&#x2500; 26
-&#x2502;   &#x251C;&#x2500;&#x2500; 27
-&#x2502;   &#x251C;&#x2500;&#x2500; 28
-&#x2502;   &#x251C;&#x2500;&#x2500; 29
-&#x2502;   &#x251C;&#x2500;&#x2500; 3
-&#x2502;   &#x251C;&#x2500;&#x2500; 30
-&#x2502;   &#x251C;&#x2500;&#x2500; 4
-&#x2502;   &#x251C;&#x2500;&#x2500; 5
-&#x2502;   &#x251C;&#x2500;&#x2500; 6
-&#x2502;   &#x251C;&#x2500;&#x2500; 7
-&#x2502;   &#x251C;&#x2500;&#x2500; 8
-&#x2502;   &#x251C;&#x2500;&#x2500; 9
-&#x2502;   &#x2514;&#x2500;&#x2500; default_smp_affinity
-&#x251C;&#x2500;&#x2500; kallsyms
-&#x251C;&#x2500;&#x2500; kcore
-&#x251C;&#x2500;&#x2500; keys
-&#x251C;&#x2500;&#x2500; key-users
-&#x251C;&#x2500;&#x2500; kmsg
-&#x251C;&#x2500;&#x2500; kpagecgroup
-&#x251C;&#x2500;&#x2500; kpagecount
-&#x251C;&#x2500;&#x2500; kpageflags
-&#x251C;&#x2500;&#x2500; loadavg
-&#x251C;&#x2500;&#x2500; locks
-&#x251C;&#x2500;&#x2500; mdstat
-&#x251C;&#x2500;&#x2500; meminfo
-&#x251C;&#x2500;&#x2500; misc
-&#x251C;&#x2500;&#x2500; modules
-&#x251C;&#x2500;&#x2500; mounts -&gt; self/mounts
-&#x251C;&#x2500;&#x2500; mtrr
-&#x251C;&#x2500;&#x2500; net -&gt; self/net
-&#x251C;&#x2500;&#x2500; pagetypeinfo
-&#x251C;&#x2500;&#x2500; partitions
-&#x251C;&#x2500;&#x2500; sched_debug
-&#x251C;&#x2500;&#x2500; schedstat
-&#x251C;&#x2500;&#x2500; scsi
-&#x2502;   &#x251C;&#x2500;&#x2500; device_info
-&#x2502;   &#x251C;&#x2500;&#x2500; scsi
-&#x2502;   &#x251C;&#x2500;&#x2500; sg
-&#x2502;   &#x2514;&#x2500;&#x2500; usb-storage
-&#x251C;&#x2500;&#x2500; self -&gt; 795328
-&#x251C;&#x2500;&#x2500; slabinfo
-&#x251C;&#x2500;&#x2500; softirqs
-&#x251C;&#x2500;&#x2500; <span class="hljs-built_in">stat</span>
-&#x251C;&#x2500;&#x2500; swaps
-&#x251C;&#x2500;&#x2500; sys
-&#x2502;   &#x251C;&#x2500;&#x2500; abi
-&#x2502;   &#x251C;&#x2500;&#x2500; debug
-&#x2502;   &#x251C;&#x2500;&#x2500; dev
-&#x2502;   &#x251C;&#x2500;&#x2500; fs
-&#x2502;   &#x251C;&#x2500;&#x2500; fscache
-&#x2502;   &#x251C;&#x2500;&#x2500; kernel
-&#x2502;   &#x251C;&#x2500;&#x2500; net
-&#x2502;   &#x251C;&#x2500;&#x2500; sunrpc
-&#x2502;   &#x2514;&#x2500;&#x2500; vm
-&#x251C;&#x2500;&#x2500; sysrq-trigger
-&#x251C;&#x2500;&#x2500; sysvipc
-&#x2502;   &#x251C;&#x2500;&#x2500; msg
-&#x2502;   &#x251C;&#x2500;&#x2500; sem
-&#x2502;   &#x2514;&#x2500;&#x2500; shm
-&#x251C;&#x2500;&#x2500; thread-self -&gt; 795328/task/795328
-&#x251C;&#x2500;&#x2500; timer_list
-&#x251C;&#x2500;&#x2500; timer_stats
-&#x251C;&#x2500;&#x2500; tty
-&#x2502;   &#x251C;&#x2500;&#x2500; driver
-&#x2502;   &#x251C;&#x2500;&#x2500; drivers
-&#x2502;   &#x251C;&#x2500;&#x2500; ldisc
-&#x2502;   &#x2514;&#x2500;&#x2500; ldiscs
-&#x251C;&#x2500;&#x2500; uptime
-&#x251C;&#x2500;&#x2500; version
-&#x251C;&#x2500;&#x2500; version_signature
-&#x251C;&#x2500;&#x2500; vmallocinfo
-&#x251C;&#x2500;&#x2500; vmstat
-&#x2514;&#x2500;&#x2500; zoneinfo
-</code></pre>
-<h2 id="&#x5185;&#x6838;&#x4EE3;&#x7801;">&#x5185;&#x6838;&#x4EE3;&#x7801;</h2>
-<pre><code class="lang-c"><span class="hljs-comment">/*
- * &lt;include/linux/proc_fs.h&gt;
- *
- *
- *
- */</span>
-</code></pre>
-<h2 id="&#x6302;&#x8F7D;-procfs">&#x6302;&#x8F7D; procfs</h2>
-<p>&#x8FD0;&#x884C;&#x65F6;&#x624B;&#x52A8;&#x6302;&#x8F7D;&#xFF1A;</p>
-<pre><code class="lang-sh"><span class="hljs-comment"># /proc &#x662F;&#x6807;&#x51C6;&#x6302;&#x8F7D;&#x70B9;</span>
-<span class="hljs-comment"># &#x5C1D;&#x8BD5;&#x6539;&#x53D8;&#x6302;&#x8F7D;&#x70B9;&#x4F1A;&#x53D1;&#x73B0;&#x4E24;&#x8005;&#x7684;&#x5185;&#x5BB9;&#x4E00;&#x81F4;&#xFF1A;sudo mount -t proc proc /tmp/proc</span>
-$ sudo mount -t proc proc /proc
-</code></pre>
-<p>&#x5F15;&#x5BFC;&#x65F6;&#x81EA;&#x52A8;&#x6302;&#x8F7D;&#xFF1A;</p>
-<pre><code class="lang-sh">$ sudo vi /etc/fstab
-proc /proc proc noauto 0 0
-</code></pre>
-<h2 id="license">LICENSE</h2>
-<p><a href="LICENSE"><img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="CC BY-NC-SA 4.0"></a></p>
+                                <h1 id="procbuddyinfo">/proc/buddyinfo</h1>
 <footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> Copyright &#xA9; 2019-2020 | CC BY-NC-SA 4.0 <br> &#x76F8;&#x5173;&#x7F51;&#x7AD9;: <a href="https://githome.io/knowledge-base/" target="_blank">&#x77E5;&#x8BC6;&#x5E93;</a> <a href="https://weplay.me" target="_blank">&#x5FAE;&#x67B6;&#x6784;&#x5E08;</a> <a href="https://quickstarts.io" target="_blank">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x66F4;&#x65B0;&#x4E8E; 2020-03-12 </span> </footer>
                                 
                                 </section>
@@ -1821,8 +1560,12 @@ proc /proc proc noauto 0 0
 
             
                 
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 简介">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="buddyinfo.html" class="navigation navigation-next navigation-unique" aria-label="Next page: buddyinfo">
+                
+                <a href="cgroups.html" class="navigation navigation-next " aria-label="Next page: cgroups">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1833,7 +1576,7 @@ proc /proc proc noauto 0 0
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"简介","level":"1.1","depth":1,"next":{"title":"buddyinfo","level":"2.1","depth":1,"path":"buddyinfo.md","ref":"buddyinfo.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-sharing","highlight","github","-lunr","-search","search-pro","-ga","-page-toc","-splitter","-lightbox","-github-buttons@2.1.0","-custom-favicon","-summary","sitemap-general","edit-link","page-footer-ex"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/jinsyin/proc"},"page-footer-ex":{"copyright":"Copyright © 2019-2020 | CC BY-NC-SA 4.0 <br/> 相关网站: [知识库](https://githome.io/knowledge-base/) [微架构师](https://weplay.me) [快速入门](https://quickstarts.io)","markdown":true,"update_format":"YYYY-MM-DD","update_label":"更新于"},"search-pro":{},"page-toc":{"selector":".markdown-section h2, .markdown-section h3, .markdown-section h4","position":"top","showByDefault":true},"sitemap-general":{"prefix":"https://githome.io/proc/"},"highlight":{},"favicon":"favicon.ico","github-buttons":{"repo":"jinsyin/proc","types":["star"],"size":"small"},"ga":{"token":"UA-12345678-1"},"edit-link":{"label":"编辑","base":"https://github.com/jinsyin/proc/blob/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Jins Yin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《procfs》","language":"zh-hans","links":{"sidebar":{"知识库":"https://githome.io/knowledge-base/","微架构师":"https://weplay.me","快速入门":"https://quickstarts.io"}},"gitbook":"*","description":"Linux procfs、Linux /proc"},"file":{"path":"README.md","mtime":"2020-03-12T03:21:01.977Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-12T03:21:51.988Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"buddyinfo","level":"2.1","depth":1,"next":{"title":"cgroups","level":"2.2","depth":1,"path":"cgroups.md","ref":"cgroups.md","articles":[]},"previous":{"title":"简介","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-sharing","highlight","github","-lunr","-search","search-pro","-ga","-page-toc","-splitter","-lightbox","-github-buttons@2.1.0","-custom-favicon","-summary","sitemap-general","edit-link","page-footer-ex"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/jinsyin/proc"},"page-footer-ex":{"copyright":"Copyright © 2019-2020 | CC BY-NC-SA 4.0 <br/> 相关网站: [知识库](https://githome.io/knowledge-base/) [微架构师](https://weplay.me) [快速入门](https://quickstarts.io)","markdown":true,"update_format":"YYYY-MM-DD","update_label":"更新于"},"search-pro":{},"page-toc":{"selector":".markdown-section h2, .markdown-section h3, .markdown-section h4","position":"top","showByDefault":true},"sitemap-general":{"prefix":"https://githome.io/proc/"},"highlight":{},"favicon":"favicon.ico","github-buttons":{"repo":"jinsyin/proc","types":["star"],"size":"small"},"ga":{"token":"UA-12345678-1"},"edit-link":{"label":"编辑","base":"https://github.com/jinsyin/proc/blob/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Jins Yin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《procfs》","language":"zh-hans","links":{"sidebar":{"知识库":"https://githome.io/knowledge-base/","微架构师":"https://weplay.me","快速入门":"https://quickstarts.io"}},"gitbook":"*","description":"Linux procfs、Linux /proc"},"file":{"path":"buddyinfo.md","mtime":"2020-03-12T03:21:01.981Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-12T03:21:51.988Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
